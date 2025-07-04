@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Edit Note{% endblock %}
+
+{% block content %}
+<h2 align="center">Edit Note</h2>
+<form method="POST">
+  <textarea name="note" class="form-control">{{ note.data }}</textarea>
+  <br />
+  <div align="center">
+    <button type="submit" style="background-color: #FFE2E2; color: black;" class="btn">Update Note</button>
+    <a href="{{ url_for('views.home') }}" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
+{% endblock %}
