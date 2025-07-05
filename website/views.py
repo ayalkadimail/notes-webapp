@@ -54,3 +54,12 @@ def edit_note(note_id):
             return redirect(url_for('views.home'))
 
     return render_template("edit_note.html", user=current_user, note=note)
+
+
+@views.route('/api/notes')
+@login_required
+def api_notes():
+    notes = [note.data for note in current_user.notes]
+    return jsonify({'notes': notes})
+
+

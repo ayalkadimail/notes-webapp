@@ -27,4 +27,27 @@
   <div align="center">
     <button type="submit" style="background-color: #FFE2E2; color: black;" class="btn">Add Note</button>
   </div>
-</form>{% endblock %}
+</form>
+<script>
+  const noteField = document.getElementById('note');
+
+  // Load saved note when page opens
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedNote = localStorage.getItem('unsavedNote');
+    if (savedNote) {
+      noteField.value = savedNote;
+    }
+  });
+
+  // Save note on input
+  noteField.addEventListener('input', () => {
+    localStorage.setItem('unsavedNote', noteField.value);
+  });
+
+  // Clear saved note on form submit
+  document.querySelector('form').addEventListener('submit', () => {
+    localStorage.removeItem('unsavedNote');
+  });
+</script>
+
+{% endblock %}
