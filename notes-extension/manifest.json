@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Notes WebApp",
+  "version": "1.0",
+  "description": "Access notes from Flask app",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "http://127.0.0.1:5000/"
+  ]
+}
